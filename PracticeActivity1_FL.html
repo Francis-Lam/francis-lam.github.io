@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang = "en">
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<title>Healing Crystals</title>
+
+		<script>
+
+			function myFirstFunction() { 
+				document.getElementById('crystalContent').innerHTML = "Clear quartz. This white crystal is considered a “master healer.” It’s said to amplify energy by absorbing, storing, releasing, and regulating it. It’s also said to aid concentration and memory. Physically, clear crystals are claimed to help stimulate the immune system and balance out your entire body. This stone is often paired with others like rose quartz to aid and enhance their abilities.";
+			}
+
+			function mySecondFunction() {
+				document.getElementById('crystalContent').innerHTML = "Tiger’s eye. If you’re in need of a power or motivation boost, this golden stone may be for you. It’s said to help rid your mind and body of fear, anxiety, and self-doubt. This can be beneficial for career aspirations or even matters of the heart. Tiger’s eye is also said to help guide you to harmony and balance to help you make clear, conscious decisions.";
+			}
+
+			function myThirdFunction() {
+				document.getElementById('crystalContent').innerHTML = "Amethyst. This purple stone is said to be incredibly protective, healing, and purifying. It’s claimed it can help rid the mind of negative thoughts and bring forth humility, sincerity, and spiritual wisdom. It’s also said to help promote sobriety. Sleep is another claimed benefit of this stone, from supposedly aiding in insomnia relief to understanding dreams. Physically, it’s said to boost hormone production, cleanse blood, and relieve pain and stress.";
+			}
+
+			function myFourthFunction() {
+				document.getElementById('crystalContent').innerHTML = "Rose quartz. Just as the color may suggest, this pink stone is all about love. It’s said to help restore trust and harmony in all different kinds of relationships while improving their close connections. It’s also claimed to help provide comfort and calm during times of grief. It isn’t all about other people, though. Rose quartz is said to also encourage love, respect, trust, and worth within one’s self — something we could all use in this day and age.";
+			}			
+		</script>
+
+		<style>
+			.assessBox {
+				background-color: lightcoral;
+			}
+
+		</style>
+	</head>
+
+	<body>
+		<h1>Find Your Healing Crystal </h1>
+		<p> Choose a word that best describes your mood</p>
+
+		<button onclick="myFirstFunction()">Happy</button>
+		<button onclick="mySecondFunction()">Tired</button>
+		<button onclick="myThirdFunction()">Stressed</button>
+		<button onclick="myFourthFunction()">Passionate</button>				
+
+	<p></p>
+	<div class="assessBox" id = "crystalContent"> Here is our assess box. This will display your healing crystal. </div>
+
+	</body>
+
+</html>

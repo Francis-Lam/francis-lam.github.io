@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang = "en">
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<title>Mood Ring</title>
+
+		<style>
+			
+			body {
+				
+				background-color: yellow;
+
+			}
+
+		</style>
+
+		<script>
+			
+		//	if (true) {
+				//then
+		//	}
+		//	else() {
+
+		//	}
+
+			function changeMood() {
+				var button = document.getElementById('ring');
+				var value = button.value;
+				if (value == '0' ) {
+					document.getElementById('moodText').innerHTML = "Rainy Day Feeling"
+					document.body.style.backgroundColor = "blue";
+					button.value = 1;
+				}
+				else if (value == '1') {
+					document.getElementById('moodText').innerHTML = "Sunshiny Feeling"
+					document.body.style.backgroundColor = "yellow";
+					button.value = 2;
+				}
+				else {
+					document.getElementById('moodText').innerHTML = "Angry"
+					document.body.style.backgroundColor = "red";
+					button.value = 0;
+				}				
+			}
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<h1> My Mood Ring</h1>
+
+		<button id="ring" value = '0' onclick="changeMood()">Change my mood 
+		</button>
+
+		<p id = "moodText"> Sunshiny feeling</p>
+
+	</body>
+
+</html>

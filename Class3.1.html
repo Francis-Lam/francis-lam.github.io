@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang = "en">
+
+	<head>
+
+		<meta charset="utf-8">
+
+			<title> For Loop </title>
+
+				</head>
+				
+				<body>
+
+					<div id = "states"> </div>
+
+					<script>
+				
+						var myArray = ['kiwi', 'apple', 'orange'];
+
+						for(i=0; i<3; i++){
+							console.log(myArray[i]);
+						}
+
+						var listOfStates = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Coloradio", "Conneticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisana", "Maine", "Maryland", "Massachusetts"]
+
+						alert(listOfStates.length);
+
+						var states = '';
+
+						for(i=0; i<listOfStates.length; i++){
+							console.log(listOfStates[i]);
+							states += "<br>" + listOfStates[i];
+							document.getElementById('states').innerHTML = states;
+							//document.getElementById('states').innerHTML = listOfStates[i];
+						}
+
+					</script>
+
+				</body>
+
+</html>

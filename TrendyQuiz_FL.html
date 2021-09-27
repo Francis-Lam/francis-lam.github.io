@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Disney Princess</title>
+<style>
+body {
+background-color: lightblue;
+font-family: Helvetica;
+}
+
+#main {
+width: 60%;
+border: 1px gray solid;
+margin: auto;
+padding: 10px;
+background-color: white;
+border-radius: 10px;
+}
+
+#header {
+margin-top: 0;
+border: 2px solid black;
+padding: 5px;
+height: 250px;
+}
+
+label {
+width: 150px;
+display: inline-block;
+}
+
+button {
+display: block;
+margin-top: 20px;
+
+}
+</style>
+</head>
+<body>
+<div id="main">
+<div id="header"><h1>Which Disney Princess are you?</h1></div>
+
+<form  id="form1">
+<p>My favorite weekend activity is?</p>
+<label><input type="radio" name="activity" id="belle" value="1" />Curling up with a book</label>
+<label><input type="radio" name="activity" id="ariel" value="2" />Swimming</label>
+<label><input type="radio" name="activity" id="elsa" value="3" />Ice Skating</label>
+<label><input type="radio" name="activity" id="aurora" value="4" />Sleeping</label>
+
+<p>The animal who will lead my royal parade is:</p>
+<label><input type="radio" name="parade" id="ariel" value="1" />Fish</label>
+<label><input type="radio" name="parade" id="mulan" value="2" />Dragon</label>
+<label><input type="radio"  name="parade" id="aurora" value="3" />Bird</label>
+<label><input type="radio" name="parade" id="rapunzel" value="4" />Chameleon</label>
+
+<p>The most important quality I look for in a prince is:</p>
+<label><input type="radio" name="prince" id="rapunzel" value="1" />Charm</label>
+<label><input type="radio" name="prince" id="belle" value="2" />Kindness</label>
+<label><input type="radio" name="prince" id="mulan" value="3" />Honor</label>
+<label><input type="radio" name="prince" id="elsa" value="4" />I don't need a prince</label>
+
+
+<button type="submit" value="Submit">Submit</button>
+
+
+</form>
+
+<p id="response">You got <span id="answer"></span></p>
+
+
+</div>
+<script>
+ 
+    
+	document.getElementById("form1").onsubmit=function() {
+	   //displays the response DOM element
+    document.getElementById("response").style.display = "block";
+    
+    //resets the DOM element on submit
+    document.getElementById("answer").innerHTML = "";
+    
+	  activity = document.querySelector('input[name = "activity"]:checked').value;
+	   
+	  
+	  parade = document.querySelector('input[name = "parade"]:checked').value;
+	   
+	  prince = document.querySelector('input[name = "prince"]:checked').value;
+	    
+	  // initialize score variables 
+	  ariel = 0;
+	  belle = 0;
+	  elsa = 0;
+	  aurora = 0;
+	  mulan = 0;
+	  rapunzel = 0;
+	  
+	  //function to calculate score for each question
+	  function eachscore(x){
+	  if(x == "ariel") { ariel = ariel + 1}
+	  if(x == "belle") { belle = belle + 1}
+	  if(x == "elsa") { elsa = elsa + 1}
+	  if(x == "aurora") { aurora = aurora + 1}
+	  if(x == "mulan") { mulan = mulan + 1}
+	  if(x == "rapunzel") { rapunzel = rapunzel + 1}
+	  }
+	  // for the above function, you could also change the 1 to a variable so you could give more points for certain questions
+	  
+	  //call function for each question
+	  eachscore(eval("activity"));
+	  eachscore(eval("parade"));
+	  eachscore(eval("prince"));
+	  
+	  
+	  
+	  all = [ariel, belle, elsa, aurora, mulan, rapunzel];
+	  
+	//get the max score  in the array
+	maxscore = Math.max.apply(Math,all);
+	
+    // object holding scores and feedback	
+    scores = [{index:0, feedback: "Ariel"},
+    {index:1, feedback: "Belle"},
+    {index:2, feedback: "Elsa"},
+    {index:3, feedback: "aurora"}];
+	
+    //figure out which index # holds the max score 
+	for(i=0; i<all.length; i++) {
+	if(all[i]==maxscore) {
+    //this gets one answer, the last one it encounters with a match
+    document.getElementById("answer").innerHTML = scores[i].feedback;
+    
+    //this version would allow for appending multiple answers; replace statement above
+    //document.getElementById("answer").innerHTML += scores[i].feedback + "; ";
+	}
+	}
+		   
+return false; // required to not refresh the page; just leave this here
+	   }// end the submit function
+	
+
+</script>
+
+
+
+</body>
+</html>
+
+
+
+	

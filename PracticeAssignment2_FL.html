@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		
+		<meta charset="utf-8">
+
+		<title> Endangered Species</title>
+
+		</style>
+
+		<script>
+
+			var description = {
+				name: "Panda",
+				age: 2,
+				color: "black and white", 
+				length: 10, 
+				type: "omnivore"
+			};
+
+
+			function animalName(){
+				alert(description.name);
+			}
+
+			function animalAge(){
+				alert(description.age);
+			}
+
+			function animalColor(){
+				alert(description.color);
+			}
+
+			function animalLength(){
+				alert(description.length);
+			}
+
+			function animalTyp(){
+				alert(description.type);
+			}
+
+			function animalType(name, age, color, height) {
+
+				for(x in description){
+					alert(x);
+				}
+
+			}
+
+		</script>
+
+	</head>
+
+	<body>
+		<h2> Endangered Species</h2>
+
+		<img src = "Panda.jpg" alt = "Panda" width = "500" height = "333">
+
+		<br>
+
+		<button onclick = "animalName()"> Animal Name</button>
+
+		<button onclick = "animalAge()"> Animal Age</button>
+
+		<button onclick = "animalColor()"> Animal Color</button>
+
+		<button onclick = "animalLength()"> Animal Length</button>
+
+		<button onclick = "animalTyp()"> Animal Type</button>
+
+		<button onclick = "animalType()"> Animal Properties</button>
+
+
+	</body>
+
+</html>

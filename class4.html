@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang = "en">
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<title>Mood Ring</title>
+
+		<style>
+			
+			body {
+				
+				background-color: yellow;
+
+			}
+
+		</style>
+
+		<script>
+			
+	/*		function changeMood(num,text) {
+				alert(num);
+				alert(text);
+*/
+			function changeMood(num) {
+
+				text = ["I feel blue", "I'm so happy", "this pisses me off", "oh I'm worried", "what if I fail", "I can't wait!"]
+
+				images = ['feelBlue.jpg','happy.jpg']
+
+				//alert(text[2]);
+
+				switch(num) {
+					case 0:
+						alert(text[0], images[0]);
+						break;
+					case 1:
+						alert(text[1], images[1]); 
+						break;
+					case 2:
+						alert(text[2]);
+						break;
+					case 3:
+						alert(text[3]);
+						break;
+					case 4:
+						alert(text[4]);
+						break;
+					case 5:
+						alert(text[5]);
+						break;
+				}
+
+			}
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<h1> My Mood Ring</h1>
+
+		<button onclick="changeMood(0)">Bluesy </button>
+		<button onclick="changeMood(1)">Cheerful </button>
+		<button onclick="changeMood(2)">Angry </button>
+		<button onclick="changeMood(3)">Anxious </button>
+		<button onclick="changeMood(4)">Nervous </button>
+		<button onclick="changeMood(5)">Excited </button>
+
+
+
+		<p id = "moodText"> Sunshiny feeling</p>
+
+	</body>
+
+</html>

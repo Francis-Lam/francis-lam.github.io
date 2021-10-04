@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		
+		<meta charset="utf-8">
+
+		<title> First Object</title>
+
+		<script>
+			
+			var myArray = ['kiwi', 'apple', 'orange']
+			//alert(myArray[1]);
+
+			var hair = {
+				name: "Susie",
+				age: 5,
+				color: "brown", 
+				length: "long", 
+				type: 'curly'
+			};
+
+			alert(hair.length);
+
+			var hair2 = {
+				name: "Bill",
+				age: 3,
+				color: "blond", 
+				length: "short",
+				type: "straight",
+				notice: function(param1) {
+					alert("Their hair is " + this.length);
+					alert(this.name + " says: " + param1);
+				}
+			};
+
+			hair2.notice('hi');
+
+			alert(hair2['length']);	
+
+			function notice2(param1) {
+				alert(param1);
+			}
+
+			notice2('hi');
+
+			function hairType(name, age, color, length, type) {
+				this.name = name;
+				this.age = age;
+				this.color = color;
+				this.length = length; 
+				this.type = type; 
+				this.notice = function() {
+					alert(this.name + " has " + color + " hair");
+				}
+
+			}
+
+			var danHair = new hairType('Dan', 5, 'red', 'short', 'wavy');
+			var samHair = new hairType('Sam', 8, 'black', 'long', 'straight');
+
+			console.log(danHair);
+
+			console.log(samHair);
+
+			myArray[0];
+
+			alert(samHair.name);
+			samHair.notice();
+
+		</script>
+
+	</head>
+
+	<body>
+		
+
+	</body>
+
+</html>

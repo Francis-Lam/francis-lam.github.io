@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		
+		<meta charset="utf-8">
+
+		<title> Canvas Object </title>
+
+		<style>
+			
+			body {
+				background-color: beige;
+			}
+
+			canvas {
+				border:  1px solid black;
+			}
+
+		</style>
+
+	</head>
+
+	<body>
+
+		<div id = "myDiv"> Here is my div </div>
+		
+		<canvas id = "painting" width = 500 height=500> </canvas>
+
+	</body>
+
+		<script>
+
+			canvas = document.getElementById('painting');
+			ctx = canvas.getContext('2d');
+
+			// To make a rectangle: ctx.fillRect(x,y, length, width);
+			ctx.fillRect(150, 150, 100, 100);
+			ctx.fillStyle = "#FF0000";
+			ctx.fillRect(100,100,50,50);
+
+
+			var c = document.getElementById("painting");
+			var ctx = c.getContext("2d");
+			ctx.font = "30px Arial";
+			ctx.strokeText("Hello World", 10, 50);
+
+			//gradien
+			var c = document.getElementById("painting");
+			var ctx = c.getContext("2d");
+
+			// Create gradient
+			var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+			grd.addColorStop(0, "pink");
+			grd.addColorStop(1, "blue");
+
+			// Fill with gradient
+			ctx.fillStyle = grd;
+			ctx.fillRect(200, 120, 150, 80);
+
+			//variable1 = document.getElementById('myDiv');
+			//console.log(variable1);
+			//variable1.innerHTML = 'hi there';
+
+
+			var rectangle1 = {
+				xVal: 200,
+				yVal: 200, 
+				height: 150,
+				width: 150,
+				
+			}
+
+		</script>
+
+</html>

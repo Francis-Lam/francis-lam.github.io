@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		
+		<meta charset="utf-8">
+
+		<title> Canvas Object </title>
+
+		<style>
+
+		body {
+			background-color: beige;
+		}
+
+		canvas {
+			border: 1px solid black;
+		}
+
+		</style>
+
+	</head>
+
+	<body>
+
+		<canvas id = "objectCanvas" width = "500" height = "500"> </canvas> <br>
+
+		<button onclick="rectangle1.drawRec()">Add Shape</button>
+
+		<button onclick="rectangle1.eraseRec()">Erase Shape</button>
+
+	</body>
+
+	<script>
+
+		canvas = document.getElementById('objectCanvas');
+		ctx = canvas.getContext('2d');
+
+
+		//ctx.fillRect(50,50,100,100)
+
+		var rectangle1 = {
+			xVal: 200,
+			yVal: 200, 
+			height: 150,
+			width: 150,
+			drawRec: function(){
+				ctx.fillRect(this.xVal, this.yVal, this.height, this.width);
+				},
+			eraseRec: function() {
+				ctx.clearRect(this.xVal, this.yVal, this.height, this.width);
+
+			}
+		}
+
+		function createRectangle(xVal, yVal, height, width) {
+			this.xVal = xVal;
+			this.yVal = yVal;
+			this.height = height;
+			this.width = width;
+			this.drawRec = function() {
+				ctx.fillRect(this.xVal, this.yVal, this.height, this.width);
+				},
+				eraseRec = function() {
+				ctx.clearRect(this.xVal, this.yVal, this.height, this.width);
+				}
+			}
+
+			rectangle2 = new createRectangle(100,100,50,50);
+			rectangle2.drawRec();
+
+	</script>
+
+
+</html>

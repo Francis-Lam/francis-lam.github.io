@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang = "en">
+	<head>
+
+		<meta charset="utf-8">
+
+		<title> Template</title>
+
+		<style>
+			
+			.yellow {
+				background-color: yellow;
+			}
+
+		</style>
+
+		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+		<script>
+			
+			element = document;
+			console.log(document);
+
+/*
+
+			<script src="Class6/js/jquery-3.6.0min.js">< /script>
+			$(selector).jqueryfunction(
+			function()) {
+
+			}
+
+			selectors can be: 
+			-class 
+			-ID
+			-html element
+*/
+
+			function myfunction() {
+				alert('this is a generic javascript alert')
+			}
+
+
+			$(document).ready(function(){
+
+				$('h1').click(function(){
+					alert('hi. this is a jquery click');
+				});
+
+				$('b2').click(function(){
+					alert('hi. this is a jquery click');
+				});				
+
+				$('.yellow').click(function(){
+
+					console.log('this is the yellow box');
+
+				});
+
+				$('.blue').toggle(function(){
+
+					alert('this is the blue box');
+
+				});
+
+			}); 
+
+		</script>
+
+	</head>
+
+	<body>
+		
+		<h1>This is a interactive heading</h1>
+
+		<button onclick="myFunction()">Click Me</button>
+ 
+ 		<button class="b2"></button>
+
+ 		<div class = "yellow"> This is a yellow box </div>
+
+ 		<div class = "blue"> This is a blue box </div>
+
+	</body>
+
+</html>

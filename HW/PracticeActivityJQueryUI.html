@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Practice Activity: JQuery UI</title>
+
+
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js" integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>
+
+
+    <script>
+      
+    $(document).ready(function(){
+
+        $( "#main" ).accordion();
+
+    });
+
+    </script>
+
+
+      <style>
+
+      .ui-accordion-header {
+        background: pink;
+      }
+
+      .ui-accordion-header.ui-state-active {
+        background: lightcoral;
+      }
+
+  
+    </style>
+
+
+  </head>
+
+  <body>
+
+
+      <h1>Starlight Tea House Menu</h1>
+
+  <div id="main">
+    <h3 class="accordTitle">Drinks</h3>
+    <div>
+      <p>
+      Choose a temperature: 
+      <ul>
+        <li>hot</li>
+        <li>cold</li>
+      </ul>
+      Choose your size: 
+      <ul>
+        <li>small (12 oz), $3.50</li>
+        <li>medium (16 oz), $4.00</li>
+        <li>large (24 oz), $4.50</li>
+      </ul>
+      Choose a tea: 
+      <ul>
+        <li>black tea</li>
+        <li>green tea</li>
+        <li>milk tea</li>
+      </ul>
+      Choose your flavor:
+      <ul>
+        <li>mango</li>
+        <li>lychee</li>
+        <li>passion fruit</li>
+        <li>peach</li>
+        <li>strawberry</li>
+        <li>taro</li>
+      </ul>
+      Choose your toppings: (each topping cost an extra $0.50)
+      <ul>
+        <li>tapioca (boba)</li>
+        <li>lychee jelly</li>
+        <li>grass jelly</li>
+        <li>lychee jelly</li>
+      </ul>
+      </p>
+    </div>
+    <h3 class="accordTitle">Appetizers</h3>
+      <div>
+      <p>
+      Choose an appetizer:
+      <ul>
+        <li>french fries ($3.00)</li>
+        <li>kimichi fries ($4.50)</li>
+        <li>popcorn chicken ($4.00)</li>
+        <li>salad ($3.00)</li>
+      </ul>
+      </p>
+    </div>
+    <h3 class="accordTitle">Entrees</h3>
+  <div>
+    <p>
+    Choose an entree:
+      <ul>
+        <li>chicken sandwich ($4.50)</li>
+        <li>cheese pizza ($6.50)</li>
+        <li>Beef Baguette ($6.00)</li>
+        <li>Fried Fish Burger ($5.00)</li>
+      </ul>
+    </p>
+  </div>
+  <h3 class="accordTitle">Desserts</h3>
+  <div>
+    <p>
+    Choose a dessert:
+      <ul>
+        <li>green tea crepe ($5.50)</li>
+        <li>Nutella Strawberry Waffle ($5.50)</li>
+        <li>Macarons [strawberry, mango, peach]($3.50)</li>
+        <li>Ube Cake ($5.50)</li>
+      </ul>
+    </p>
+  </div>
+</div>
+
+  </body>
+
+ </html>

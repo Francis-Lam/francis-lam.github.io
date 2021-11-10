@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Classwork</title>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+      $(document).ready(function(){
+
+
+
+      });
+
+
+      myObject = {name: "Susie", color: "brown", type: "curly", age: 25}
+
+      //inside site json, 
+      myJson = [
+        {"name": "Paul", "color": "blond", "type": "stright", "age": "25"}, 
+        {"name": "Jesse", "color": "brown", "type": "stright", "age": "21"}
+      ]
+
+     // console.log(myObject);
+
+     // console.log(myJson);
+
+    //  $().jQueryObject(urlhere, function(data){
+    //    data gets used here
+    //    lines of code here
+    //  })
+
+     $.getJSON("https://dog.ceo/api/breeds/image/random", function(data){
+        console.log(data);
+        alert(data.message);
+        img = '<img src ="' + data.message + '">'
+        $(".dogImg").html(img);
+     });
+
+    </script>
+
+  </head>
+
+  <body>
+
+    <h1>Template</h1>
+
+    <div class = "dogImg"></div>
+
+  </body>
+
+ </html>

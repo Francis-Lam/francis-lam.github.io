@@ -1,14 +1,13 @@
-				[
-			{
-				"album": "love yourself: Tear",
-				"artist": "BTS",
-				"year": "2018"
-			},
+[
+	{
+		"album": "love yourself: Tear",
+		"artist": "BTS",
+		"year": "2018"
+	},
 
-			{
-				"album": "Map of the soul: 7",
-				"artist": "BTS",
-				"year": "2020"
-
-			}
-		]
+	{
+		"album": "Map of the soul: 7",
+		"artist": "BTS",
+		"year": "2020"
+	}
+]

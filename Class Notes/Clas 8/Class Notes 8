@@ -1,0 +1,22 @@
+JQuery = library that can be used to do data queries and event handling
+
+JSON = Javascript Standard notation used to transfer data between systems
+
+Javascript Object: name value pairings, that can be any combination of data. 
+
+
+-- Standard Round Trip Web Site -- 
+
+HTML Front End Page
+CSS that makes it look nicer
+Javascript that makes your page interactive
+AJAX calls that can go out to a server and get data
+	HTTPS queries that happen without reloading a page
+JSON data that is returned
+
+====
+
+
+Javascript object programming: means to use returned data in a clean efficient manner
+
+

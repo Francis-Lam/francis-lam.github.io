@@ -11,8 +11,12 @@
 
 		<script>
 			
-			$.get("https://francis-lam.github.io/Class%20Notes/Clas%208/album.json", function(data) {
+			$.get("https://francis-lam.github.io/Class%20Notes/Class8/album.json", function(data) {
 				console.log(data);
+				alert(data[1].album);
+
+				$("p").html(data[1].album);
+				$(".emptyDiv").html(data[1].year);
 			});
 
 		</script>
@@ -20,7 +24,12 @@
 	</head>
 
 	<body>
-						
+		
+		<h1>Music Albums</h1>	
+
+		<div class="emptyDiv"></div>
+
+		<p id="dataDisplay"></p>				
 
 	</body>
 

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Francis Skills Assignment 3</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ 	
+	<style>
+		#venueInfo{
+			display:flex;
+			align-items:center;
+			justify-content:center;
+			flex-direction: column;
+			padding-top: 100px;
+		}
+		
+		body {
+			background-image: url("https://c4.wallpaperflare.com/wallpaper/586/675/740/vaporwave-wallpaper-preview.jpg");
+			background-color:lavender;
+			margin: 0;
+  		font-family: Arial, Helvetica, sans-serif;
+		}
+
+		.topnav {
+		  overflow: hidden;
+		  background-color: midnightblue;
+		}
+
+		.topnav a {
+		  float: left;
+		  color: #f2f2f2;
+		  text-align: center;
+		  padding: 14px 16px;
+		  text-decoration: none;
+		  font-size: 17px;
+		}
+
+		.topnav a:hover {
+		  background-color: #ddd;
+		  color: blueviolet;
+		}
+
+		.topnav a.active {
+		  background-color: turquoise;
+		  color: white;
+		}
+
+		h1 {
+			color: white;
+		}
+	</style>
+	
+	<script>
+		var events = new Array();
+		var selectedOp;
+		var selectCount = 0;
+		
+		function Event(artist, venue, date, city, state, showTime, price, currency) {
+			this.artist = artist;
+			this.venue = venue;
+			this.date = date;
+			this.city = city;
+			this.state = state;
+			this.showTime = showTime;
+			this.price = price;
+			this.currency = currency;
+		}
+		
+		$('#venueList').selectmenu();
+		$('#eventBoxContainer').accordion();
+		
+		$(document).ready(function(){
+			$('#venueList').on('change', function(){
+				selectedOp = $("#venueList option:selected").text();
+				selectCount = 0;
+				$.each(events, function(index, value){
+					if(value.venue == selectedOp && selectCount == 0){
+						$('#accordion').html("<h3>" + value.artist + "<br>Date: " + value.date + "</h3>" + "<div>" + "City: " + value.city + "<br>" + "State: " + value.state + "<br>" + "Show Time: " + value.showTime + "<br>" + "Price: " + value.price + "<br>" + "Currency: " + value.currency + "<br></div>");
+						selectCount++;
+					} else if(value.venue == selectedOp && selectCount != 0){
+						$('#accordion').append("<h3>" + value.artist + "<br>Date: " + value.date + "</h3>" + "<div>" + "City: " + value.city + "<br>" + "State: " + value.state + "<br>" + "Show Time: " + value.showTime + "<br>" + "Price: " + value.price + "<br>" + "Currency: " + value.currency + "<br></div>");
+						selectCount++;
+					} 
+				});
+				$("#accordion").accordion();
+				$("#accordion").accordion("refresh");
+			});
+			
+			$.ajax({
+				url: 'https://blmak.github.io/BigMusicClubConclomerateDates.json',
+				dataType: 'json',
+				type: 'get',
+				cache: false,
+				success: function(data){
+						$(data).each(function(index, value){
+							events.push(new Event(value.artist, value.venue, value.date, value.city, value.state, value.show_time, value.price, value.currency));
+						});
+				}
+			});
+				
+			$('#eventBoxContainer').on('mouseenter', '.eventBoxes', function(){
+				$('.hideExtraDet').css('display', 'block');
+			})
+			$('#eventBoxContainer').on('mouseleave', '.eventBoxes', function(){
+				$('.hideExtraDet').css('display', 'none');
+			});
+			
+				
+         });
+	</script>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="active" href="FrancisSkillsAssignment3.html">Home</a>
+  <a href="about.html">About</a>
+</div>
+
+	<div id = "venueInfo">
+				<h1>Big Music Club Information</h3>
+				<select id="venueList">
+					<option disabled selected>Choose a Venue</option>
+					<option value="1">Little Café</option>
+					<option value="2">Big Hall</option>
+					<option value="3">Smokey Club</option>
+				</select>
+		<div id="accordion">
+		</div>
+	</div>
+
+</body>
+</html>

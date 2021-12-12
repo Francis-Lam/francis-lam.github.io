@@ -195,7 +195,7 @@ window.onload = () => {
     randomActivity()
 }
 
-//fetch
+/*fetch
 const randomActivity = () => {
     fetch('https://www.boredapi.com/api/activity')
     .then((res) => {
@@ -207,9 +207,9 @@ const randomActivity = () => {
 }
 
 showRandomActivity = (randomThing) => {
-
-		document.getElementById('activity').innerText = `${randomThing.results[0].activity.activity}`
-    
+		document.getElementById('activity').innerText = `${randomThing.results[0].activity}`
+		alert(activity);
+		randomtext = document
 }
 
 /*
@@ -220,5 +220,14 @@ $.ajax({
     console.log(data);
   }
 });
+
+
+$.get("https://www.boredapi.com/api/activity", function(data) {
+				console.log(data);
+				alert(data[1].activity);
+
+				$("p").html(data[1].activity);
+				$(".activity").html(data[1].activity);
+			});
 */
 

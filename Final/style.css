@@ -138,12 +138,6 @@ body {
   transition: width 0.1s linear;
 }
 
-/* title */
-.title-containter{
-  position: relative;
-  padding-top: 1000px;
-}
-
 /* rain sound */
 .effect-btn{
   color: black;
